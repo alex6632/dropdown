@@ -1,0 +1,98 @@
+// _c-form.scss
+
+// Custom Alltricks dropdown
+.dropdown {
+  
+  select {
+    display: none;
+  }
+
+  .at-dropdown {
+    position: relative;
+    width: 300px;
+    cursor: pointer;
+
+    &__top {
+      color: color('foreground');
+      background-color: color('gray', 'light');
+      text-transform: uppercase;
+      font-weight: 700;
+      border: solid 1px color('background', 'invert');
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+
+      &::after {
+        position: absolute;
+        content: $icon-down-arrow;
+        font-family: font('icon');
+        font-size: 10px;
+        font-weight: 900;
+        top: 13px;
+        right: 15px;
+        color: color('foreground');
+      }
+
+      &.is-open {
+        &::after {
+          content: $icon-up-arrow;
+        }
+      }
+    }
+
+    &__bottom {
+      display: none;
+      position: relative;
+      top: -1px;
+      border: solid 1px color('gray');
+      font-size: 14px;
+
+      &.show {
+        display: block;
+      }
+    }
+
+    &__legend {
+      background-color: color('gray', 'light');
+      padding: 8px 3px;
+      font-weight: 700;
+    }
+
+    &__item {
+      &--strong {
+        font-weight: 700;
+      }
+      &--mea {
+        color: color('secondary', 'red');
+        font-weight: 700;
+      }
+    }
+
+    &__list {
+
+      &__option {
+        @include transition();
+
+        &::after {
+          display: block;
+          content: "";
+          width: 90%;
+          height: 1px;
+          margin: auto;
+          background-color: color('gray', 'light');
+        }
+
+        &:hover {
+          background-color: color('gray', 'light');
+          @include transition();
+        }
+
+        &__inside {
+          display: flex;
+          justify-content: space-between;
+          padding: 4px 3px;
+        }
+      }
+    }
+  }
+}

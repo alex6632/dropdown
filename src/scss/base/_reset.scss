@@ -1,0 +1,15 @@
+// _reset.scss
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+button, a {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
