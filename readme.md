@@ -13,7 +13,6 @@ npm i
 ```
 
 Next, compile with
-Run
 ```
 gulp dist
 ```
